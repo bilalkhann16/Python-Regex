@@ -10,7 +10,7 @@ data1=re.findall(email_re,corpus)
 print (data1)
 
 #alternative
-print ("\n\n Second\n\n")
+print ("\n Second\n")
 
 with open('investing.html') as f:
     corpus = f.read()
