@@ -4,7 +4,7 @@ import re
 
 result=requests.get("https://www.investopedia.com")
 web_re= r'[httphttps]+[://]+[www.]+[a-zA-z0-9]+[.com.org]+'
-email_re= r'[a-zA-Z0-9_.-]+[^!#$%^&*()]@[a-zA-Z]+[.com]+'
+email_re=r'[a-zA-Z0-9_.-]+[^!#$%^&*()]@(?:gmail|yahoo|hotmail|outlook)\.com'
 corpus = BeautifulSoup(result.content, "html.parser")
 corpus=str(corpus)
 data1=re.findall(web_re,corpus)
@@ -25,4 +25,3 @@ with open ('emails.txt') as f:
     read = f.read()
 email_data=re.findall(email_re,read)
 print(email_data)
-
